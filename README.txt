@@ -33,11 +33,20 @@ a) For BNs:
 
 b) For DBNs:  
 
-	> sh dynamicBanjoToJSON.sh dynamic.report.***.txt  
+	> sh dynamicBanjoToJSON+ML.sh dynamic.report.***.txt  
 
 
 After a successfull execution of the BASH script, a new JSON file will be created named:  <name_of_your_report_file>.json
 
+Examples:
+
+	a) For BNs:
+
+		> sh staticBanjoToJSON.sh banjo_datasets/bn/static.report.txt  
+
+	b) For DBNs:  
+
+		> sh dynamicBanjoToJSON+ML.sh banjo_datasets/dbn/LtGr841_report.txt  
 
 --------------------------------
 
@@ -54,7 +63,7 @@ After a successfull execution of the BASH script, a new JSON file will be create
 --------------------------------
 
 
-4. To see your Banjo networks in BayesPiles, visit the following url pattern:
+4. To see your Banjo static-Bayesian networks in BayesPiles, visit the following url pattern:
 
 	http://localhost/bayespiles/bayespiles.html?data=data/<name_of_your_report_file>.json
 
@@ -64,3 +73,16 @@ Examples:
 	http://localhost/bayespiles/bayespiles.html?data=data/dynamic.json
 
 
+--------------------------------
+
+
+5. To see your Banjo dynamic Bayesian networks in BayesPiles, visit the following url pattern:
+
+	http://localhost/bayespiles/bayespilesML.html?data=data/dbn/<name_of_your_report_file>.json
+
+Examples:
+
+	http://localhost/bayespiles/bayespilesML.html?data=data/eval.json
+	http://localhost/bayespiles/bayespilesML.html?data=data/LtGr841.json
+	
+	
