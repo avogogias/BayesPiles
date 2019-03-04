@@ -176,7 +176,7 @@ function Pile(id, scene, nodeOrder, scale) {
 			//ML				GLUtils.addBufferedRect(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c])
 							
 							cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-							ni==nj? c = 1: null;
+//2019							ni==nj? c = 1: null; // omitt diagonal
 			//				GLUtils.addBufferedRect(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c])
 						//	c==0? GLUtils.addBufferedClock(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], m[0].length, ml): null;
 						
@@ -195,7 +195,7 @@ function Pile(id, scene, nodeOrder, scale) {
 						}
 					} //TV endof ml
 					
-					//SINGLE
+					//SINGLE GRID - NOT WORKING!!!
 					//TV create a grid frame and set on/off with a checkbox							GRID ON/OFF
 					if (document.getElementById("gr_id").checked)
 					{	
@@ -242,12 +242,12 @@ function Pile(id, scene, nodeOrder, scale) {
 					
 					for(var ml=0; ml<m[0].length; ml++){
 						cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-						ni==nj? c = 1: null; // omitt diagonal
+//2019						ni==nj? c = 1: null; // omitt diagonal
 					    c==0? this.line[i][ml][j] = GLUtils.addBufferedClock2(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], m[0].length, ml): null;		// Only draw full mls				
 					
 					} //TV endof ml
 					
-					//SINGLE
+					//SINGLE GRID - NOT WORKING!!!
 					//TV create a grid frame and set on/off with a checkbox							GRID ON/OFF
 					if (document.getElementById("gr_id").checked)
 					{	
@@ -294,12 +294,12 @@ function Pile(id, scene, nodeOrder, scale) {
 					
 					for(var ml=0; ml<m[0].length; ml++){
 						cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-						ni==nj? c = 1: null; // omitt diagonal
+//2019						ni==nj? c = 1: null; // omitt diagonal
 					    c==0? this.line[i][ml][j] = GLUtils.addBufferedClockCol(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], m[0].length, ml): null;		// Only draw full mls				
 					
 					} //TV endof ml
 					
-					//SINGLE
+					//SINGLE GRID - NOT WORKING!!!
 					//TV create a grid frame and set on/off with a checkbox							GRID ON/OFF
 					if (document.getElementById("gr_id").checked)
 					{	
@@ -362,7 +362,7 @@ function Pile(id, scene, nodeOrder, scale) {
 						}else{ 
 		
 							cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-							ni==nj? c = 1: null;
+//2019							ni==nj? c = 1: null; // omitt diagonal
 							GLUtils.addBufferedStripe(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], m[0].length, ml)
 							
 						}
@@ -375,7 +375,7 @@ function Pile(id, scene, nodeOrder, scale) {
 					scene.add(gridFrame)
 				*/
 
-					//SINGLE
+					//SINGLE GRID - NOT WORKING!!!
 					//TV create a grid frame and set on/off with a checkbox							GRID ON/OFF
 					if (document.getElementById("gr_id").checked)
 					{	
@@ -438,7 +438,7 @@ function Pile(id, scene, nodeOrder, scale) {
 						}else{ 
 		
 							cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-							ni==nj? c = 1: null;
+//2019							ni==nj? c = 1: null; // omitt diagonal
 							GLUtils.addBufferedStripeCol(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], m[0].length, ml)
 							
 						}
@@ -451,7 +451,7 @@ function Pile(id, scene, nodeOrder, scale) {
 					scene.add(gridFrame)
 				*/
 	
-					//SINGLE
+					//SINGLE GRID - NOT WORKING!!!
 					//TV create a grid frame and set on/off with a checkbox							GRID ON/OFF
 					if (document.getElementById("gr_id").checked)
 					{	
@@ -549,7 +549,7 @@ function Pile(id, scene, nodeOrder, scale) {
 								}
 								v /= this.pileMatrices.length
 								c = 1-Math.max(0,cellValue(v))
-								i==j? c = 1: null;
+//2019								i==j? c = 1: null; 		// omitt diagonal in pile
 								
 								GLUtils.addBufferedRect(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c])
 								//TV GLUtils.addBufferedClock(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], this.pileMatrices[0].matrix[0].length, ml)							
@@ -595,7 +595,7 @@ function Pile(id, scene, nodeOrder, scale) {
 							for(var ml=0; ml<m[0].length; ml++)
 							{
 								cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-								ni==nj? c = 1: null; // omitt diagonal
+//2019								ni==nj? c = 1: null; // omitt diagonal
 								c==0? this.line[i][ml][j] = GLUtils.addBufferedClock2(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, col, m[0].length, ml): null;		// Only draw full mls				
 							
 							} //TV endof ml							
@@ -610,7 +610,7 @@ function Pile(id, scene, nodeOrder, scale) {
 								}
 								v /= this.pileMatrices.length
 								c = 1-Math.max(0,cellValue(v))
-								i==j? c = 1: null;
+//2019								i==j? c = 1: null; 		// omitt diagonal in pile
 								c!=1? GLUtils.addBufferedClock2(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], this.pileMatrices[0].matrix[0].length, ml): null;		// Only draw full mls												
 							}
 						}
@@ -654,7 +654,7 @@ function Pile(id, scene, nodeOrder, scale) {
 							for(var ml=0; ml<m[0].length; ml++)
 							{
 								cellValue(m[ni][ml][nj])==1? c = 0: c = 1;						
-								ni==nj? c = 1: null; // omitt diagonal
+//2019								ni==nj? c = 1: null; // omitt diagonal
 								c==0? this.line[i][ml][j] = GLUtils.addBufferedClockCol(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, col, m[0].length, ml): null;		// Only draw full mls				
 							
 							} //TV endof ml							
@@ -669,7 +669,7 @@ function Pile(id, scene, nodeOrder, scale) {
 								}
 								v /= this.pileMatrices.length
 								c = 1-Math.max(0,cellValue(v))
-								i==j? c = 1: null;
+//2019								i==j? c = 1: null; 		// omitt diagonal in pile
 								c!=1? GLUtils.addBufferedClockCol(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], this.pileMatrices[0].matrix[0].length, ml): null;		// Only draw full mls												
 							}
 						}
@@ -725,7 +725,7 @@ function Pile(id, scene, nodeOrder, scale) {
 								v /= this.pileMatrices.length
 								c = 1-Math.max(0,cellValue(v))
 
-								i==j? c = 1: null;						
+//2019								i==j? c = 1: null;	 		// omitt diagonal in pile					
 								GLUtils.addBufferedStripe(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], this.pileMatrices[0].matrix[0].length, ml)							
 							}
 						}
@@ -781,7 +781,7 @@ function Pile(id, scene, nodeOrder, scale) {
 								v /= this.pileMatrices.length
 								c = 1-Math.max(0,cellValue(v))
 
-								i==j? c = 1: null;						
+//2019								i==j? c = 1: null;			 		// omitt diagonal in pile			
 								GLUtils.addBufferedStripeCol(vertexPositions, -y, -x, 0, CELL_SIZE, CELL_SIZE, vertexColors, [c,c,c], this.pileMatrices[0].matrix[0].length, ml)							
 							}
 						}
